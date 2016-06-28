@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+		<p><b>Product:</b> <%= number_to_currency(@line_item.product) %></p>
+        <p><b>Quantity:</b> <%= @line_item.qty %></p>
+        <p><b>Unit Price:</b> <%= number_to_currency(@line_item.unit_price) %></p>
+        <p><b>Full Price:</b> <%= number_to_currency(@line_item.full_price) %></p>
+
+<%= link_to 'Edit', edit_order_line_item_path(@order, @line_item) %> |
+<%= link_to 'Back', order_line_items_path(@order) %>
