@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Product:</strong>
-  <%= @order.number %>
+  <strong>Order:</strong>
+  #<%=@order.number %>
 </p>
 
 <table>
@@ -37,7 +37,8 @@
 </table>
 
 
-<%= link_to 'Printable Receipt (PDF)', order_path(@order, format: "pdf") %>
+<%= link_to 'Printable Receipt (PDF)', order_path(@order, format: "pdf") %> |
+<%= link_to 'New Item', new_order_line_item_path(@order) %><br>
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
-<%= link_to 'New Item', new_order_line_item_path(@order) %>
+

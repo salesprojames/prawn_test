@@ -34,5 +34,5 @@
 </table>
 
 <br>
-
+<%= link_to 'Printable Receipt (PDF)', order_path(@order, format: "pdf") %> |
 <%= link_to 'New Line item', new_order_line_item_path(@order) %>
