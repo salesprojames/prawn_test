@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
-
-<p>
+<center>
+<h1>
   <strong>Order:</strong>
   #<%=@order.number %>
-</p>
+</h1>
 
 <table>
   <thead>
@@ -12,7 +12,7 @@
       <th>Qty</th>
       <th>Unit Price</th>
       <th>Full Price</th>
-      <th colspan="3"></th>
+      <th colspan="3">Actions</th>
     </tr>
   </thead>
 
@@ -25,13 +25,11 @@
         <td><%= number_to_currency(line_item.unit_price) %></td>
         <td><%= number_to_currency(line_item.full_price) %></td>
         <% @total_sum += line_item.full_price %>
-        <td><%= link_to 'Show', order_line_item_path(@order, line_item) %></td>
-        <td><%= link_to 'Edit', edit_order_line_item_path(@order, line_item) %></td>
         <td><%= link_to 'Destroy', [@order, line_item], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
       <tr>
-        <td><b>Total:</b> <%= number_to_currency(@total_sum) %></td>
+        <td colspan="5"><b>Total:</b> <%= number_to_currency(@total_sum) %></td>
       </tr>
   </tbody>
 </table>
@@ -39,6 +37,5 @@
 
 <%= link_to 'Printable Receipt (PDF)', order_path(@order, format: "pdf") %> |
 <%= link_to 'New Item', new_order_line_item_path(@order) %><br>
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
 
+</center>
